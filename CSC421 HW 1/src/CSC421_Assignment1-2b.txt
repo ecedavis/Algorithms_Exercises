@@ -1,0 +1,29 @@
+
+def equalssum3(x, total):
+    count = 0
+    i=0
+    n=len(x)
+    c1=0
+    c2=0
+    for num in x:
+        c1+=1
+        diff = total - num
+        i=0
+        j=n-1
+        while(i<j):
+            c2+=1
+            sum=x[i]+x[j]
+            if sum==diff and x[i]!=x[j] and x[j]!=num and x[i]!=num:
+                return True
+            elif sum>diff:
+                j-=1
+            else:
+                i+=1
+    
+    return False
+
+nums = [5,10,20,30,35,60,110,200]
+
+for test in nums:
+    print(equalssum3(nums,test))
+    
